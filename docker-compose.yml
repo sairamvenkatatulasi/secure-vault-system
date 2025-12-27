@@ -1,11 +1,9 @@
-version: '3.8'
-
 services:
   blockchain:
     image: trufflesuite/ganache:latest
     ports:
       - "8545:8545"
-    command: ganache --host 0.0.0.0 --deterministic
+    command: --host 0.0.0.0 --deterministic
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8545"]
       interval: 5s
